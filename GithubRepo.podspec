@@ -25,7 +25,7 @@ This framework use AFNetworking for creating network for user to input a Github 
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Markus Chow' => 'markuschow@gmail.com' }
-  s.source           = { :git => 'https://github.com/Markus Chow/GithubRepo.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/markuschow/GithubRepo.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -38,5 +38,5 @@ This framework use AFNetworking for creating network for user to input a Github 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.dependency 'AFNetworking', '~> 2.3'
 end

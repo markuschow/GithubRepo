@@ -1,4 +1,9 @@
 # GithubRepo
+Welcome to the GithubRepo! 
+
+This GithubRepo framework is a demo to show the framework implemention of an API call to query a GitHub repo by user entering the repo's name.
+
+This framework writtern in Objective-c and require dependecy of AFNetworking.
 
 [![CI Status](https://img.shields.io/travis/Markus Chow/GithubRepo.svg?style=flat)](https://travis-ci.org/Markus Chow/GithubRepo)
 [![Version](https://img.shields.io/cocoapods/v/GithubRepo.svg?style=flat)](https://cocoapods.org/pods/GithubRepo)
@@ -11,6 +16,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- The framework currently supports Xcode 11.6 (Objective-c).
+- Use CocoaPod to handle dependecy in Xcode
+
 ## Installation
 
 GithubRepo is available through [CocoaPods](https://cocoapods.org). To install
@@ -18,6 +26,26 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'GithubRepo'
+```
+
+## Usage
+
+### GithubRepoFetcher
+
+`GithubRepoFetcher`  creates and manages an `AFURLSessionManager` object based to perfrom Github repo search API call. Which require to recevie a correct Git user name.
+
+#### Creating a Github Repo API Call
+
+```objective-c
+[GithubRepoFetcher fetchRepo:@"repositoryUserName" onSuccess:^(id  _Nullable response) {
+	if (response) {
+		NSLog(@"response : %@", response);
+	}
+} onError:^(NSError * _Nullable error) {
+	if (error) {
+		NSLog(@"error : %@", error.localizedDescription);
+	}
+}];
 ```
 
 ## Author
