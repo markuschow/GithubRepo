@@ -5,11 +5,6 @@ This GithubRepo framework is a demo to show the framework implemention of an API
 
 This framework writtern in Objective-c and require dependecy of AFNetworking.
 
-[![CI Status](https://img.shields.io/travis/Markus Chow/GithubRepo.svg?style=flat)](https://travis-ci.org/Markus Chow/GithubRepo)
-[![Version](https://img.shields.io/cocoapods/v/GithubRepo.svg?style=flat)](https://cocoapods.org/pods/GithubRepo)
-[![License](https://img.shields.io/cocoapods/l/GithubRepo.svg?style=flat)](https://cocoapods.org/pods/GithubRepo)
-[![Platform](https://img.shields.io/cocoapods/p/GithubRepo.svg?style=flat)](https://cocoapods.org/pods/GithubRepo)
-
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -37,6 +32,8 @@ pod 'GithubRepo'
 #### Creating a Github Repo API Call
 
 ```objective-c
+@import GithubRepo;
+
 [GithubRepoFetcher fetchRepo:@"repositoryUserName" onSuccess:^(id  _Nullable response) {
 	if (response) {
 		NSLog(@"response : %@", response);
