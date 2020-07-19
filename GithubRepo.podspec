@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GithubRepo'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'A network call helper to fetch the Git repo by input user name.'
 
 # This description is used to generate tags and improve search results.
