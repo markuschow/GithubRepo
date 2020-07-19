@@ -39,5 +39,5 @@ This framework use AFNetworking for creating network for user to input a Github 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'AFNetworking', '~> 2.3'
-	 s.dependency 'Specta', '~> 1.0'
+	 
 end

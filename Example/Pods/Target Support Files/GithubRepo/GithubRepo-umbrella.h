@@ -14,3 +14,4 @@
 FOUNDATION_EXPORT double GithubRepoVersionNumber;
 FOUNDATION_EXPORT const unsigned char GithubRepoVersionString[];
 
+#import <GithubRepo/GithubRepoFetcher.h>

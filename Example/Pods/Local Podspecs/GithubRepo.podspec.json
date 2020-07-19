@@ -22,9 +22,6 @@
   "dependencies": {
     "AFNetworking": [
       "~> 2.3"
-    ],
-    "Specta": [
-      "~> 1.0"
     ]
   }
 }

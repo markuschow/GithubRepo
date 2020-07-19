@@ -8,6 +8,9 @@
 
 @import UIKit;
 
-@interface GITHUBREPOViewController : UIViewController
+@interface GITHUBREPOViewController : UIViewController <UISearchBarDelegate>
+
+@property (nonatomic) UISearchBar 	*searchBar;
+@property (nonatomic) UITextView	*textView;
 
 @end

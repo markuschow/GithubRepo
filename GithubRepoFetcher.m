@@ -9,7 +9,7 @@
 #import "GithubRepoFetcher.h"
 
 #import "GithubRepoConstants.h"
-//#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 NSString * _Nonnull const NetworkErrorDomain = @"NetworkErrorDomain";
 
@@ -44,27 +44,20 @@ NSString * _Nonnull const NetworkErrorDomain = @"NetworkErrorDomain";
 
 + (void)performNetworkCall:(NSURL *)url onSuccess:(OnSuccess)onSuccess onError:(OnError)onError {
 	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-	
-	
-//	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//	AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-//
-//	NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//
-//	NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
-//		NSLog(@"uploadProgress : %@", uploadProgress);
-//	} downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
-//		NSLog(@"uploadProgress : %@", downloadProgress);
-//	} completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-//		if (error) {
-//			NSLog(@"Error: %@", error);
-//			onError(error);
-//		} else {
-//			NSLog(@"%@ %@", response, responseObject);
-//			onSuccess(responseObject);
-//		}
-//	}];
-//	[dataTask resume];
+	AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+	NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+		if (error) {
+			NSLog(@"Error: %@", error);
+			onError(error);
+		} else {
+			NSLog(@"%@ %@", response, responseObject);
+			onSuccess(responseObject);
+		}
+	}];
+	[dataTask resume];
 }
 
 @end
